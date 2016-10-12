@@ -1,0 +1,38 @@
+<h1 class="page-header">{{title}}</h1>
+<div class="list-group">
+
+     <!-- <span class="badge right">评分:{{rating.average}}</span>  --> 
+        <div class="media">
+            <div class="media-left" href="#">
+                <img ng-src={{images.large}}>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{title}}</h4>
+                <p>導演:<span ng-repeat="director in directors">{{director.name}} {{$last?'':'、'}}</span></p>
+                <p>類型:{{genres.join('、')}}</p>
+                <p>主演:<span ng-repeat="cast in casts">{{cast.name}} {{$last?'':'、'}}</span></p>
+                <p>主要情节:{{summary}}</p>
+            </div>
+        </div>
+</div>
+<!-- 加载动画 -->
+<div ng-hide="directors.length">
+  <div class="vertical-centered-box">
+  <div class="content">
+    <div class="loader-circle"></div>
+    <div class="loader-line-mask one">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-mask two">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-mask three">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-mask four">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div>
+</div>
+
